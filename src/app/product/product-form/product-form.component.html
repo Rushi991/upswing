@@ -1,0 +1,13 @@
+<h3>{{ productForm.get('id')?.value ? 'Edit' : 'Add' }} Product</h3>
+<form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+    <label>Name:</label>
+    <input formControlName="name" required />
+
+    <label>Price:</label>
+    <input type="number" formControlName="price" required />
+
+    <label>Category:</label>
+    <input formControlName="category" required />
+
+    <button type="submit">{{ productForm.get('id')?.value ? 'Update' : 'Add' }} Product</button>
+</form>

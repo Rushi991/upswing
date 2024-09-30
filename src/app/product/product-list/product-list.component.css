@@ -1,0 +1,27 @@
+.table-container {
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background: #ffffff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin: 0;
+  }
+  
+  .action-button {
+    margin-right: 5px;
+  }
+  
+  .p-table {
+    width: 100%;
+  }
+  
