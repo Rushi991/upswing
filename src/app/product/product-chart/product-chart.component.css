@@ -1,42 +1,75 @@
-/* product-chart.component.css */
 .chart-container {
-    margin: 20px auto;
-    max-width: 12%;
-    padding: 20px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 60%; /* Adjusted for better visibility */
+  padding: 40px;
+  background: linear-gradient(135deg, #f6f9fc, #eef1f7); /* Soft and subtle background gradient */
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow for a more prominent effect */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+  animation: rotate-background 10s infinite linear;
+}
+
+@keyframes rotate-background {
+  from {
+      transform: rotate(0deg);
   }
-  
-  .ngx-charts .bar {
-    stroke-width: 3px;
-    stroke: #ffffff;
+  to {
+      transform: rotate(360deg);
   }
-  
-  .ngx-charts .axis path,
-  .ngx-charts .axis line {
-    stroke: #9e9e9e;
-  }
-  
-  .ngx-charts .axis text {
-    fill: #424242;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .ngx-charts .legend-title {
-    font-size: 16px;
-    font-weight: bold;
-    fill: #424242;
-  }
-  
-  .ngx-charts .data-label {
-    fill: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  .ngx-charts text {
-    fill: #424242;
-  }
-  
+}
+
+.ngx-charts .bar {
+  stroke-width: 2px;
+  stroke: #ffffff;
+  transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+  rx: 10px; /* Rounded edges for the bars */
+  fill: url(#barGradient); /* Gradient fill for bars */
+}
+
+.ngx-charts .bar:hover {
+  transform: scale(1.07); /* Larger scale on hover for better emphasis */
+  fill: #ffcc80; /* Change to a warm color on hover */
+}
+
+.ngx-charts .axis path,
+.ngx-charts .axis line {
+  stroke: #b0bec5;
+}
+
+.ngx-charts .axis text {
+  fill: #263238;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ngx-charts .legend-title {
+  font-size: 18px;
+  font-weight: bold;
+  fill: #1e88e5;
+}
+
+.ngx-charts .data-label {
+  fill: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.ngx-charts text {
+  fill: #37474f;
+}
+
+.ngx-charts .bar:hover {
+  fill-opacity: 0.85; /* Slight opacity change on hover for added feedback */
+}
