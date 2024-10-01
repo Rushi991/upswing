@@ -9,38 +9,36 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [NgxChartsModule],
   templateUrl: './product-chart.component.html',
   styleUrls: ['./product-chart.component.css'],
-  
+
 })
 export class ProductChartComponent implements OnInit, OnChanges {
-  @Input() chartData: any[] = []; // Accept chart data as input
+  @Input() chartData: any[] = [];
   colorScheme: any = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-  formattedChartData: any[] = []; // Holds the formatted data for the chart
+  formattedChartData: any[] = [];
 
   ngOnInit() {
-    // No need to call updateChartData here, as it will be handled in ngOnChanges
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['chartData'] && this.chartData) {
-      this.updateChartData(); // Update the chart when input data changes
+      this.updateChartData();
     }
   }
   private updateChartData() {
     debugger
-    console.log('Raw chart data:', this.chartData); // Debugging
-  
-    // Update chart data to include name and category in the name
+    console.log('Raw chart data:', this.chartData);
+
     this.formattedChartData = this.chartData.map(product => ({
-      name: `${product.name} (${product.category || 'Uncategorized'})`,  // Combine name and category
-      value: Number(product.price) || 0, // Ensure price is a valid number
+      name: `${product.name} (${product.category || 'Uncategorized'})`,
+      value: Number(product.price) || 0,
     }));
-  
-    console.log('Formatted chart data:', this.formattedChartData); // Debugging
+
+    console.log('Formatted chart data:', this.formattedChartData);
   }
-  
-  
+
+
 
 }

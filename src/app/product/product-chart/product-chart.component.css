@@ -2,9 +2,9 @@
   margin: 20px auto;
   max-width: 60%;
   padding: 40px;
-  background: linear-gradient(135deg, #f6f9fc, #eef1f7); 
+  background: linear-gradient(135deg, #f6f9fc, #eef1f7);
   border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -23,10 +23,11 @@
 
 @keyframes rotate-background {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
+
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -37,7 +38,7 @@
 }
 
 .ngx-charts .bar:hover {
-  transform: scale(1.07); 
+  transform: scale(1.07);
   fill: #ffcc80;
 }
 
@@ -69,12 +70,12 @@
 }
 
 .ngx-charts .bar:hover {
-  fill-opacity: 0.85; 
+  fill-opacity: 0.85;
 }
 
 :host ::ng-deep .bar text {
   font-size: 12px;
-  fill: #ffffff; /* White text on bars */
+  fill: #ffffff;
 }
 
 :host ::ng-deep .x-axis text {
@@ -84,17 +85,20 @@
 
 :host ::ng-deep .y-axis text {
   font-size: 12px;
-  fill: #333; /* Darker color for labels */
+  fill: #333;
 }
 
 :host ::ng-deep .chart-bar {
-  rx: 5; /* Rounded corners for bars */
+  rx: 5;
 }
+
 .bar-label {
   position: absolute;
   white-space: nowrap;
-  color: #fff; /* Text color */
-  font-weight: bold; /* Text weight */
-  transform: translate(-50%, -50%); /* Center the label on its position */
+  color: #fff;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
 }
+
+
 
