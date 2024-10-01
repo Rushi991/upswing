@@ -8,7 +8,7 @@
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
-                <th>Category</th> <!-- New Category Column -->
+                <th>Category</th>
                 <th>Price</th>
                 <th>Actions</th>
             </tr>
@@ -16,7 +16,7 @@
         <ng-template pTemplate="body" let-product>
             <tr>
                 <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td> <!-- New Category Data -->
+                <td>{{ product.category }}</td>
                 <td>{{ product.price }}</td>
                 <td>
                     <button (click)="updateProduct(product.id)" pButton type="button" label="Update" icon="pi pi-pencil"
@@ -28,6 +28,5 @@
         </ng-template>
     </p-table>
 
-    <!-- Render chart only when products data is available -->
     <app-product-chart *ngIf="products && products.length > 0" [chartData]="products"></app-product-chart>
 </div>

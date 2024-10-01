@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private apiUrl = 'http://localhost:3000/products'; // URL to web api
+  private apiUrl = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 
   addProduct(product: { name: string, price: number, category: string }): Observable<any> {

@@ -3,8 +3,8 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductFormComponent } from './product/product-form/product-form.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/products', pathMatch: 'full' }, // Redirect to products list by default
+    { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: 'products', component: ProductListComponent },
-    { path: 'products/new', component: ProductFormComponent }, // Route for adding a new product
-    { path: 'products/edit/:id', component: ProductFormComponent } // Ro  { path:
+    { path: 'products/new', component: ProductFormComponent },
+    { path: 'products/edit/:id', component: ProductFormComponent }
 ];

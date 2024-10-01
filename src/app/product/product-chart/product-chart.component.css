@@ -1,10 +1,10 @@
 .chart-container {
   margin: 20px auto;
-  max-width: 60%; /* Adjusted for better visibility */
+  max-width: 60%;
   padding: 40px;
-  background: linear-gradient(135deg, #f6f9fc, #eef1f7); /* Soft and subtle background gradient */
+  background: linear-gradient(135deg, #f6f9fc, #eef1f7); 
   border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow for a more prominent effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -33,14 +33,12 @@
 .ngx-charts .bar {
   stroke-width: 2px;
   stroke: #ffffff;
-  transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
-  rx: 10px; /* Rounded edges for the bars */
-  fill: url(#barGradient); /* Gradient fill for bars */
+  transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out
 }
 
 .ngx-charts .bar:hover {
-  transform: scale(1.07); /* Larger scale on hover for better emphasis */
-  fill: #ffcc80; /* Change to a warm color on hover */
+  transform: scale(1.07); 
+  fill: #ffcc80;
 }
 
 .ngx-charts .axis path,
@@ -71,5 +69,32 @@
 }
 
 .ngx-charts .bar:hover {
-  fill-opacity: 0.85; /* Slight opacity change on hover for added feedback */
+  fill-opacity: 0.85; 
 }
+
+:host ::ng-deep .bar text {
+  font-size: 12px;
+  fill: #ffffff; /* White text on bars */
+}
+
+:host ::ng-deep .x-axis text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+:host ::ng-deep .y-axis text {
+  font-size: 12px;
+  fill: #333; /* Darker color for labels */
+}
+
+:host ::ng-deep .chart-bar {
+  rx: 5; /* Rounded corners for bars */
+}
+.bar-label {
+  position: absolute;
+  white-space: nowrap;
+  color: #fff; /* Text color */
+  font-weight: bold; /* Text weight */
+  transform: translate(-50%, -50%); /* Center the label on its position */
+}
+
