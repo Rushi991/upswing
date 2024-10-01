@@ -3,11 +3,12 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule,ButtonModule],
   providers: [ProductService],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
@@ -36,10 +37,11 @@ export class ProductFormComponent {
     this.productId = this.route.snapshot.paramMap.get('id');
     if (this.productId) {
       this.productService.getProducts().subscribe((products: any[]) => {
-        //   const product = products.find((p: { id: number | null; }) => p.id === this.productId);
-        //   if (product) {
-        //     this.productForm.patchValue(product);
-        //   }
+          const product = products.find((p: { id: number | null; }) => p.id === this.productId);
+          if (product) {
+        this.productForm.patchValue(product);
+          }
+
       });
     }
   }

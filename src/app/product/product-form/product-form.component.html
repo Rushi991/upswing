@@ -1,13 +1,25 @@
-<h3>{{ productForm.get('id')?.value ? 'Edit' : 'Add' }} Product</h3>
+<h3>{{ productId ? 'Edit' : 'Add' }} Product</h3>
 <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
-    <label>Name:</label>
-    <input formControlName="name" required />
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-6">
+            <label for="name">Name:</label>
+            <input id="name" pInputText formControlName="name" required class="p-inputtext p-component" />
+        </div>
 
-    <label>Price:</label>
-    <input type="number" formControlName="price" required />
+        <div class="p-field p-col-12 p-md-6">
+            <label for="price">Price:</label>
+            <input id="price" type="number" pInputText formControlName="price" required
+                class="p-inputtext p-component" />
+        </div>
 
-    <label>Category:</label>
-    <input formControlName="category" required />
+        <div class="p-field p-col-12 p-md-6">
+            <label for="category">Category:</label>
+            <input id="category" pInputText formControlName="category" required class="p-inputtext p-component" />
+        </div>
 
-    <button type="submit">{{ productForm.get('id')?.value ? 'Update' : 'Add' }} Product</button>
+        <div class="p-field p-col-12">
+            <button type="submit" pButton label="{{ productId ? 'Update' : 'Add' }} Product" 
+                class="p-button-success" [disabled]="!productForm.valid"></button>
+        </div>
+    </div>
 </form>
